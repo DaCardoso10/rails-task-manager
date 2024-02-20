@@ -1,0 +1,12 @@
+<h1>Tasks View In</h1>
+
+<h2><%= @task.title %></h2>
+<h4><%= @task.details %></h4>
+<h4><%= @task.completed %></h4>
+
+<p><%= link_to "Editar Task", edit_path %></p>
+<%= link_to "Borrar Task",
+  delete_task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Seguro que quiere borrar?"}
+%>
+<p><%= link_to "Volver a Tasks", tasks_path %></p>
